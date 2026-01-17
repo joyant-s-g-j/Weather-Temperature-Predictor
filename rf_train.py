@@ -103,3 +103,5 @@ print("R² Score:", r2_score(y_test, y_pred))
 # Save the trained model
 with open("weather_temp_model.pkl", "wb") as file:
   pickle.dump(pipeline, file)
+
+print("Model saved as weather_temp_model.pkl")
