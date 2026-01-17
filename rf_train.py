@@ -28,3 +28,9 @@ wthr_desc = melt_df(weather_desc, "weather_description")
 wind_d = melt_df(wind_dir, "wind_direction")
 wind_s = melt_df(wind_speed, "wind_speed")
 
+df = temp.merge(humi, on=['datetime', 'city']) \
+         .merge(pres, on=['datetime', 'city']) \
+         .merge(wthr_desc, on=['datetime', 'city']) \
+         .merge(wind_d, on=['datetime', 'city']) \
+         .merge(wind_s, on=['datetime', 'city'])
+
