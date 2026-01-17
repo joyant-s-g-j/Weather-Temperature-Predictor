@@ -63,3 +63,11 @@ preprocessor = ColumnTransformer(
         ('cat', cat_transformer, categorical_features)
     ]
 )
+
+rf_model = RandomForestRegressor(
+    n_estimators=100,
+    max_depth=20,
+    min_samples_split=5,
+    random_state=42,
+    n_jobs=-1
+)
