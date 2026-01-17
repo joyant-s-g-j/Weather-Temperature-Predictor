@@ -40,3 +40,13 @@ df = df[df['temperature'].between(-50, 60)]
 X = df.drop(columns=['temperature','datetime','city'], axis=1)
 y = df['temperature']
 
+numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
+categorical_features = X.select_dtypes(include=['object']).columns
+
+num_transformer = Pipeline(
+    steps = [
+        ('imputer', SimpleImputer(strategy='median')),
+        ('scaler', StandardScaler())
+    ]
+)
+
